@@ -33,7 +33,7 @@ a {
     margin: 0 auto;
     display: grid;
     grid-template-areas: "home" "menu1" "menu2" "menu3";
-    grid-template-columns: 2fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     margin:0px;
     padding-bottom: 0px;
     padding-top: 0px;
@@ -78,6 +78,15 @@ a {
 
 
 }
+.경쟁사분석:hover{
+    background:url("../finalapp/경쟁사분석선택.png");
+    background-size:cover;
+    grid-column: 2/3;
+    grid-row:2/5;
+    width:350px;
+    height: 430px;
+    margin-right: 20px;
+}
 
 .특허추천{
     background: url("../finalapp/특허추천.png") no-repeat;
@@ -91,6 +100,16 @@ a {
 
 }
 
+.특허추천:hover{
+    background: url("../finalapp/특허추천선택.png") no-repeat;
+    background-size:cover;
+    grid-column: 3/4;
+    grid-row:2/5;
+    width:350px;
+    height: 430px;
+    margin-left: 20px;
+
+}
 
 .아무글{
     margin: 50px;

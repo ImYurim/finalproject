@@ -6,11 +6,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script type="text/javascript" src="{%static 'finalapp/select.js'%}">
-        $(document).ready(function () {
-            search();
-        }) </script>
     <link rel="stylesheet" href="{%static 'finalapp/competitor.css'%}">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="{%static 'finalapp/select.js'%}"></script>
 
 </head>
 
@@ -23,11 +21,11 @@
         <a class="menu3" href="">추가기능3</a>
     </div>
     <div class="content">
-        <div class="경쟁사분석"> 여기는 경쟁사 분석</div>
-
-        <div id="select">
+        <div class="title"> 여기는 경쟁사 분석</div>
+        <div class="search">
             <div id="input-form">
                 이름 : <input type="text" id="keyword">
+                <input type="submit" value="검색">
             </div>
 
             <table id="user-table">
@@ -56,74 +54,19 @@
                         <td>경영학과</td>
                         <td>2000290032</td>
                     </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>하석진</td>
-                        <td>1991.05.15</td>
-                        <td>사회학과</td>
-                        <td>2000290033</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>김창식</td>
-                        <td>1991.08.07</td>
-                        <td>건축학과</td>
-                        <td>2000290038</td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>송승헌</td>
-                        <td>1989.04.07</td>
-                        <td>물리학과</td>
-                        <td>2000290039</td>
-                    </tr>
-                    <tr>
-                        <td>6</td>
-                        <td>김태희</td>
-                        <td>1988.02.07</td>
-                        <td>의류학과</td>
-                        <td>2000290040</td>
-                    </tr>
-                    <tr>
-                        <td>7</td>
-                        <td>정지훈</td>
-                        <td>1988.07.25</td>
-                        <td>식품학과</td>
-                        <td>2000290042</td>
-                    </tr>
-                    <tr>
-                        <td>8</td>
-                        <td>쯔위</td>
-                        <td>1981.02.07</td>
-                        <td>영어영문학과</td>
-                        <td>2002290031</td>
-                    </tr>
-                    <tr>
-                        <td>9</td>
-                        <td>이두찬</td>
-                        <td>1993.09.07</td>
-                        <td>역사학과</td>
-                        <td>2000290055</td>
-                    </tr>
-                    <tr>
-                        <td>10</td>
-                        <td>정지석</td>
-                        <td>1995.09.07</td>
-                        <td>경영정보학과</td>
-                        <td>2000290056</td>
-                    </tr>
-                    <tr>
-                        <td>11</td>
-                        <td>서현석</td>
-                        <td>1993.09.07</td>
-                        <td>역사학과</td>
-                        <td>2000290060</td>
-                    </tr>
+
                 </tbody>
             </table>
         </div>
     </div>
 
 </body>
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        search();
+    })
+
+</script>
 
 </html>
