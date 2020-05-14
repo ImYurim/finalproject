@@ -1,0 +1,84 @@
+body{
+    background: url("../finalapp/background.jpg") no-repeat;
+    background-size:cover;
+}
+.container{
+    position: relative;
+    display: grid;
+    grid-template-areas: "upper" "content";
+    grid-template-rows: 1fr  9fr;
+    height: 900px;
+    width: 1500px;
+
+}
+a {
+    color: white;
+    text-decoration: none;
+
+  }
+
+.upper {
+    position: relative;
+    margin: 0 auto;
+    display: grid;
+    grid-template-areas: "home" "menu1" "menu2" "menu3";
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    margin:0px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    font-size: 20px;
+    text-align: center;
+    line-height: 1.0;
+
+  }
+  .home {
+    font-size: 40px;
+    margin: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .menu1{
+      padding-top:30px;
+      padding-bottom: 20px;
+  }
+  .menu2{
+      padding-top:30px;
+      padding-bottom: 20px;
+  }
+  .menu3{
+    padding-top:30px;
+    padding-bottom: 20px;
+}
+.content{
+    position: relative;
+    display: grid;
+    grid-template-areas: "경쟁사분석" "특허추천" ;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+.경쟁사분석{
+    grid-column: 2/3;
+    grid-row:2/5;
+
+}
+.경쟁사분석_img{
+    width:350px;
+    height: 430px;
+    margin-right: 20px;
+}
+.특허추천{
+    grid-column: 3/4;
+    grid-row:2/5;
+
+
+}
+.특허추천_img{
+    width:350px;
+    height: 430px;
+    margin-left: 20px;
+}
+
+.아무글{
+    margin: 50px;
+    color: white;
+}

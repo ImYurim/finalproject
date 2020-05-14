@@ -1,0 +1,28 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{%static 'finalapp/style.css'%}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="upper">
+            <a class="home" href="{%url 'home'%}">특허전략솔루션</a>
+            <a class="menu1" href="">추가기능1</a>
+            <a class="menu2" href="">추가기능2</a>
+            <a class="menu3" href="">추가기능3</a>
+        </div>
+        <div class="content">
+            <a class="경쟁사분석" href="{%url 'competitor'%}"><img class="경쟁사분석_img"
+                    src="{%static 'finalapp/경쟁사분석.png'%}"></a>
+            <a class="특허추천" href="{%url 'patent'%}"><img class="특허추천_img" src="{%static 'finalapp/특허추천.png'%}"></a>
+        </div>
+    </div>
+</body>
+
+</html>
