@@ -57,15 +57,28 @@ a {
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 .경쟁사분석{
+    position: relative;
+    background: url("../finalapp/경쟁사분석.png") no-repeat;
+    background-size:cover;
     grid-column: 2/3;
     grid-row:2/5;
-
-}
-.경쟁사분석_img{
     width:350px;
     height: 430px;
     margin-right: 20px;
+    display: grid;
+    grid-template-areas: "search";
+    grid-template-rows: 8fr 1fr;
+
 }
+
+.search{
+    position: absolute;
+    left: 50%;
+    grid-row: 2/3;
+    transform: translate(-50%,0%);
+}
+
+
 .특허추천{
     grid-column: 3/4;
     grid-row:2/5;
