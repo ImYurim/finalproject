@@ -9,31 +9,19 @@
     <link rel="stylesheet" href="{%static 'finalapp/style.css'%}">
 </head>
 
-<body>
-    <div class="container">
-        <div class="upper">
-            <a class="home" href="{%url 'home'%}">특허전략솔루션</a>
-            <a class="menu1" href="">추가기능1</a>
-            <a class="menu2" href="">추가기능2</a>
-            <a class="menu3" href="">추가기능3</a>
-        </div>
-        <div class="content">
-            <div class="경쟁사분석">
-                <div class="search">
-                    <input type="text" placeholder="회사명을 입력하세요.">
-                    <div id="recommend" class="invisible">
-                        <div class="item"><span class="text"></span></div>
-                        <div class="item">Veritatis et <span class="text"></span></div>
-                        <div class="item">ut aliquid ex <span class="text"></span> vero eos</div>
-                    </div>
-                </div>
-            </div>
-            <div class="특허추천">
-                <img class="특허추천_img" src="{%static 'finalapp/특허추천.png'%}">
-            </div>
+<body class="container">
 
-            =
-        </div>
+    <div class="upper">
+        <a class="home" href="{%url 'home'%}">특허전략솔루션</a>
+        <a class="menu1" href="">인사말</a>
+        <a class="menu2" href="">추가기능2</a>
+        <a class="menu3" href="">추가기능3</a>
+    </div>
+    <div class="content">
+        <a class="경쟁사분석" href="{%url 'competitor'%}"></a>
+        <a class="특허추천" href="{%url 'patent'%}"></a>
+    </div>
+
 </body>
 
 </html>

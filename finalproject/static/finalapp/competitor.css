@@ -60,39 +60,31 @@ a {
     padding-top:30px;
     padding-bottom: 20px;
 }
-.content{
-    position: relative;
-    display: grid;
-    grid-template-areas: "경쟁사분석" "특허추천" ;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-}
+
 .경쟁사분석{
-    background: url("../finalapp/경쟁사분석.png") no-repeat;
-    background-size:cover;
-    grid-column: 2/3;
-    grid-row:2/5;
-    width:350px;
-    height: 430px;
-    margin-right: 20px;
-
-
+    color: black;
+    margin: 20px;
 }
 
-.특허추천{
-    background: url("../finalapp/특허추천.png") no-repeat;
-    background-size:cover;
-    grid-column: 3/4;
-    grid-row:2/5;
-    width:350px;
-    height: 430px;
-    margin-left: 20px;
 
 
-}
 
 
 .아무글{
     margin: 50px;
     color: black;
 }
+.content {
+    background: white;
+    padding-bottom:0px;
+    margin-bottom:30px;
+}
+#select {width: 960px; margin: 0 auto;}
+#select #input-form {text-align: center;}
+#user-table {margin: 0 auto; text-align: center;}
+#input-form {margin-top: 10px; margin-bottom: 10px;}
+
+#user-table {border-collapse: collapse;}
+#user-table > thead > tr { background-color: #333; color:#fff; }
+#user-table > thead > tr > th { padding: 8px; width: 150px; }
+#user-table > tbody > tr > td { border-bottom: 1px solid gray; padding:8px; }
