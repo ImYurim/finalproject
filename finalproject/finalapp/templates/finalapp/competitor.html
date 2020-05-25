@@ -17,42 +17,47 @@
     <div class="upper">
         <a class="home" href="{%url 'home'%}">특허전략솔루션</a>
         <a class="menu1" href="">인사말</a>
-        <a class="menu2" href="">추가기능2</a>
-        <a class="menu3" href="">추가기능3</a>
+        <a class="menu2" href="">서비스 소개</a>
+        <a class="menu3" href="">용어 정의</a>
     </div>
     <div class="content">
-        <div class="title"> 여기는 경쟁사 분석</div>
+        <div class="제목">
+            <canvas id="square" width="10" height="50"></canvas>
+            <span id="title">경쟁사 분석</span>
+        </div>
+        <div class="잘못입력시">
+            {%if error%}
+            <p>잘못 입력하셨습니다. 다시 입력 해주세요.</p>
+            {%endif%}
+        </div>
         <div class="search">
             <div id="input-form">
-                이름 : <input type="text" id="company">
-                <input type="submit" value="검색">
+                <form action="{%url 'competitorresult'%}">
+
+                    회사명 : <input type="text" id="company" name="company">
+                    <input type="submit" value="검색" id="제출">
+                </form>
             </div>
 
             <table id="user-table">
                 <thead>
                     <tr>
-                        <th>번호</th>
-                        <th>이름</th>
-                        <th>생년월일</th>
-                        <th>학과</th>
-                        <th>학번</th>
+                        <th id="number">번호</th>
+                        <th id="select">회사명</th>
+
                     </tr>
                 </thead>
 
                 <tbody>
                     <tr>
                         <td>1</td>
-                        <td>박경두</td>
-                        <td>1991.09.07</td>
-                        <td>경영정보학과</td>
-                        <td>2000290031</td>
+                        <td>삼성</td>
+
                     </tr>
                     <tr>
                         <td>2</td>
-                        <td>김동규</td>
-                        <td>1991.07.07</td>
-                        <td>경영학과</td>
-                        <td>2000290032</td>
+                        <td>애플</td>
+
                     </tr>
 
                 </tbody>

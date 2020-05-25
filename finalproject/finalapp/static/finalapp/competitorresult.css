@@ -87,52 +87,99 @@ a {
     height: 55px;
     padding-top: 7px;
   }
+  .자회사{
+    text-decoration: underline;
+  }
 
-
-.잘못입력시{
-  height:20px;
-}
-
-
-.search{
-    display: relative;
+  .결과 {
     display: grid;
-    grid-template-rows: 1fr 9fr;
+    grid-template-rows: 450px 450px;
+  }
+.경쟁사
+{
+    margin-top: 30px;
+    display: grid;
+    grid-template-rows:1fr 9fr;
 }
+  .경쟁사분석간략{
+      display: grid;
+      grid-template-columns: 1fr 9fr;
+      margin-bottom: 20px;
+      height:40px;
+  }
+  
+  .소제목 {
+    background-color: rgb(242, 242, 242);
+    padding-top: 10px;
 
-#input-form{
+    text-align: center;
+    font-weight: bold;
+    height:30px;
 
-grid-row: 1/2;
-margin-top: 10px; margin-bottom: 10px;
+  }
+.설명{
+    margin-top: 10px;
+    margin-left:20px;
+    margin-bottom: 5px;
 }
-#company{
-    width:900px;
-    height: 20px;
-    margin: 20px;
-}
-#제출{
-    width: 60px;
-    height: 60px;
-    padding: 2px;
-    margin: 0px;
-    font-size: 50px;
-}
-#user-table{
-  margin-left:80px;
-  grid-row: 2/3;
-  text-align: center;
-  border-collapse: collapse;
-}
-#user-table > thead > tr > th { padding: 8px; }
-#number{
-  width:50px;
-}
-#select{
-  width:900px;
-}
-
-
+.경쟁사분석결과{
+    margin-top: 20px;
+    margin-left: 160px;
+    height: 300px;
 
 
-#user-table > thead > tr { background-color: rgb(35, 42, 78); color:#fff; }
-#user-table > tbody > tr > td { border-bottom: 1px solid gray; padding:8px; }
+}
+
+
+
+
+
+.특허경쟁력
+{
+    display: grid;
+    grid-template-rows:1fr 9fr;
+}
+  .특허경쟁력간략{
+      display: grid;
+      grid-template-columns: 1fr 9fr;
+      margin-bottom: 20px;
+      height:40px;
+  }
+  
+.경쟁력분석결과{
+    margin-top: 20px;
+    margin-left: 160px;
+
+
+}
+
+  table {
+    width: 1200px;
+    border: 2px solid rgb(230, 230, 230);
+    border-collapse: collapse;
+    height: 200px;
+  }
+
+  tr,
+  th,
+  td {
+    border: 2px solid rgb(230, 230, 230);
+    text-align: center;
+  }
+
+  .회사명 {
+    width: 600px;
+  }
+
+  .나머지 {
+    width: 200px;
+  }
+
+  .분류코드{
+      background-color: white;
+  }
+
+  .분류코드:hover {
+    background-color: #7DA5E1;
+    text-decoration: underline;
+  }

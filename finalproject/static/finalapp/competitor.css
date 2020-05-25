@@ -33,7 +33,7 @@ a {
     margin: 0 auto;
     display: grid;
     grid-template-areas: "home" "menu1" "menu2" "menu3";
-    grid-template-columns: 2fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     margin:0px;
     padding-bottom: 0px;
     padding-top: 0px;
@@ -61,30 +61,73 @@ a {
     padding-bottom: 20px;
 }
 
-.경쟁사분석{
-    color: black;
-    margin: 20px;
-}
-
-
-
-
-
-.아무글{
-    margin: 50px;
-    color: black;
-}
 .content {
     background: white;
-    padding-bottom:0px;
-    margin-bottom:30px;
+    padding-bottom:20px;
+    padding-left:20px;
+    padding-top:20px;
+    margin-bottom:50px;
+    display: grid;
+    grid-template-rows: 1fr 1fr 8fr;
+    height:1000px;
 }
-#select {width: 960px; margin: 0 auto;}
-#select #input-form {text-align: center;}
-#user-table {margin: 0 auto; text-align: center;}
-#input-form {margin-top: 10px; margin-bottom: 10px;}
 
-#user-table {border-collapse: collapse;}
+
+  .제목 {
+    display: grid;
+    grid-template-columns: 20px auto;
+  }
+  #square {
+    background-color: rgb(0,27,66);
+  }
+  #title {
+    font-size: 33px;
+    font-weight: bold;
+    height: 55px;
+    padding-top: 7px;
+  }
+
+.search{
+    display: relative;
+    grid-row: 2/3;
+    display: grid;
+    grid-template-rows: 1fr 9fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: 960px; margin: 0 auto;
+}
+
+#input-form{
+
+grid-row: 1/2;
+grid-column: 2/4;
+margin-top: 10px; margin-bottom: 10px;
+text-align: center;
+}
+#company{
+    width:200px;
+    height: 20px;
+    margin: 20px;
+}
+#제출{
+    width: 60px;
+    height: 60px;
+    padding: 2px;
+    margin: 0px;
+    font-size: 50px;
+}
+#user-table{
+    grid-row: 2/3;
+    grid-column: 1/5;
+    margin: 0 auto; 
+    text-align: center;
+    border-collapse: collapse;
+}
+
+
+
+
+
+
 #user-table > thead > tr { background-color: #333; color:#fff; }
 #user-table > thead > tr > th { padding: 8px; width: 150px; }
 #user-table > tbody > tr > td { border-bottom: 1px solid gray; padding:8px; }
