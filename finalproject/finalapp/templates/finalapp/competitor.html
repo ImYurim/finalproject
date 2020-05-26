@@ -27,41 +27,42 @@
         </div>
         <div class="잘못입력시">
             {%if error%}
-            <p>잘못 입력하셨습니다. 다시 입력 해주세요.</p>
+            <p>잘못 입력하셨습니다. 다시 입력 해주세요!</p>
             {%endif%}
         </div>
         <div class="search">
             <div id="input-form">
-                <form action="{%url 'competitorresult'%}">
+                <form id="input-form" action="{%url 'competitorresult'%}">
 
                     회사명 : <input type="text" id="company" name="company">
                     <input type="submit" value="검색" id="제출">
                 </form>
             </div>
+            <div id="목록명">
+                <table class="user-table">
+                    <thead>
+                        <tr>
+                            <th class="number">번호</th>
+                            <th class="select">회사명</th>
 
-            <table id="user-table">
-                <thead>
-                    <tr>
-                        <th id="number">번호</th>
-                        <th id="select">회사명</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div id="검색목록" style="overflow: auto;">
+                <table id="user-table">
+                    <tbody>
+                        {%for companyselect in companyall%}
+                        <tr>
+                            <td class="number">{{companyselect.id}}</td>
+                            <td class="select">{{companyselect.name}}</td>
 
-                    </tr>
-                </thead>
+                        </tr>
+                        {%endfor%}
+                    </tbody>
 
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>삼성</td>
-
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>애플</td>
-
-                    </tr>
-
-                </tbody>
-            </table>
+                </table>
+            </div>
         </div>
     </div>
 

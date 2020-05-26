@@ -9,7 +9,8 @@ def home(request):
 
 
 def competitor(request):
-    return render(request, 'finalapp/competitor.html')
+    companyall = Company.objects.all()
+    return render(request, 'finalapp/competitor.html', {'companyall': companyall})
 
 
 def competitorresult(request):
@@ -20,9 +21,11 @@ def competitorresult(request):
         if companyname:
             return render(request, 'finalapp/competitorresult.html', {'companyname': companyname, 'company': company})
         else:
-            return render(request, 'finalapp/competitor.html', {'error': True})
+            companyall = Company.objects.all()
+            return render(request, 'finalapp/competitor.html', {'error': True, 'companyall': companyall})
     else:
-        return render(request, 'finalapp/competitor.html', {'error': True})
+        companyall = Company.objects.all()
+        return render(request, 'finalapp/competitor.html', {'error': True, 'companyall': companyall})
 
 
 def searchpatent(request):
