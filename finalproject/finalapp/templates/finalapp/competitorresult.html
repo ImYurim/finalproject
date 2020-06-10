@@ -64,25 +64,45 @@
               </tr>
               <tr>
                 <td>{{companydata.competitor2}}</td>
-                <td class="분류코드">b</td>
+                <td class="분류코드">
+                {%for similar in similar2%}
+                {{similar}}
+                <br>
+                {%endfor%}
+                </td>
                 <td class="분류코드">b</td>
                 <td class="분류코드">b</td>
               </tr>
               <tr>
                 <td>{{companydata.competitor3}}</td>
-                <td class="분류코드">c</td>
+                <td class="분류코드">
+                {%for similar in similar3%}
+                {{similar}}
+                <br>
+                {%endfor%}
+                </td>
                 <td class="분류코드">c</td>
                 <td class="분류코드">c</td>
               </tr>
               <tr>
                 <td>{{companydata.competitor4}}</td>
-                <td class="분류코드">c</td>
+                <td class="분류코드">
+                {%for similar in similar4%}
+                {{similar}}
+                <br>
+                {%endfor%}
+                </td>
                 <td class="분류코드">c</td>
                 <td class="분류코드">c</td>
               </tr>
               <tr>
                 <td>{{companydata.competitor5}}</td>
-                <td class="분류코드">c</td>
+                <td class="분류코드">
+                {%for similar in similar5%}
+                {{similar}}
+                <br>
+                {%endfor%}
+                </td>
                 <td class="분류코드">c</td>
                 <td class="분류코드">c</td>
               </tr>
