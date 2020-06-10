@@ -16,10 +16,10 @@ def competitor(request):
 def competitorresult(request):
     if 'company' in request.GET and request.GET['company']:
         company = request.GET['company']
-        companyname = Company.objects.filter(
+        companydetail = Company.objects.all().filter(
             name=company)
-        if companyname:
-            return render(request, 'finalapp/competitorresult.html', {'companyname': companyname, 'company': company})
+        if companydetail:
+            return render(request, 'finalapp/competitorresult.html', {'companydetail': companydetail, 'company': company})
         else:
             companyall = Company.objects.all()
             return render(request, 'finalapp/competitor.html', {'error': True, 'companyall': companyall})

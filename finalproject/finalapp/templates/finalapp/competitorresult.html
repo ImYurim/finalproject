@@ -21,7 +21,7 @@
       <canvas id="square" width="10" height="50"></canvas>
       <span id="title">경쟁사 분석</span>
     </div>
-    {%if companyname%}
+    {%if companydetail%}
     <div class="자회사">
       <h1>입력한 회사 : {{company}}</h1>
     </div>
@@ -49,24 +49,38 @@
               </tr>
             </thead>
             <tbody>
+            {%for companydata in companydetail%}
               <tr>
-                <td>회사1</td>
+                <td>{{companydata.competitor1}}</td>
                 <td class="분류코드">a</td>
                 <td class="분류코드">a</td>
                 <td class="분류코드">a</td>
               </tr>
               <tr>
-                <td>회사2</td>
+                <td>{{companydata.competitor2}}</td>
                 <td class="분류코드">b</td>
                 <td class="분류코드">b</td>
                 <td class="분류코드">b</td>
               </tr>
               <tr>
-                <td>회사3</td>
+                <td>{{companydata.competitor3}}</td>
                 <td class="분류코드">c</td>
                 <td class="분류코드">c</td>
                 <td class="분류코드">c</td>
               </tr>
+              <tr>
+                <td>{{companydata.competitor4}}</td>
+                <td class="분류코드">c</td>
+                <td class="분류코드">c</td>
+                <td class="분류코드">c</td>
+              </tr>
+              <tr>
+                <td>{{companydata.competitor5}}</td>
+                <td class="분류코드">c</td>
+                <td class="분류코드">c</td>
+                <td class="분류코드">c</td>
+              </tr>
+              {%endfor%}
             </tbody>
           </table>
         </div>
