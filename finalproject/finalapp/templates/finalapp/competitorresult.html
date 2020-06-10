@@ -49,62 +49,112 @@
               </tr>
             </thead>
             <tbody>
-            {%for companydata in companydetail%}
+              {%for companydata in companydetail%}
               <tr>
                 <td>{{companydata.competitor1}}</td>
-                
+
                 <td class="분류코드">
-                {%for similar in similar1%}
-                {{similar}}
-                <br>
-                {%endfor%}
+                  {%for similar in similar1%}
+                  {{similar}}
+                  <br>
+                  {%endfor%}
                 </td>
-                <td class="분류코드">a</td>
-                <td class="분류코드">a</td>
+                <td class="분류코드">
+                  {%for strength in competitor1_s%}
+                  {{strength}}
+                  <br>
+                  {%endfor%}
+                </td>
+                <td class="분류코드">
+                  {%for weakness in competitor1_w%}
+                  {{weakness}}
+                  <br>
+                  {%endfor%}
+                </td>
               </tr>
               <tr>
                 <td>{{companydata.competitor2}}</td>
                 <td class="분류코드">
-                {%for similar in similar2%}
-                {{similar}}
-                <br>
-                {%endfor%}
+                  {%for similar in similar2%}
+                  {{similar}}
+                  <br>
+                  {%endfor%}
                 </td>
-                <td class="분류코드">b</td>
-                <td class="분류코드">b</td>
+                <td class="분류코드">
+                  {%for strength in competitor2_s%}
+                  {{strength}}
+                  <br>
+                  {%endfor%}
+                </td>
+                <td class="분류코드">
+                  {%for weakness in competitor2_w%}
+                  {{weakness}}
+                  <br>
+                  {%endfor%}
+                </td>
               </tr>
               <tr>
                 <td>{{companydata.competitor3}}</td>
                 <td class="분류코드">
-                {%for similar in similar3%}
-                {{similar}}
-                <br>
-                {%endfor%}
+                  {%for similar in similar3%}
+                  {{similar}}
+                  <br>
+                  {%endfor%}
                 </td>
-                <td class="분류코드">c</td>
-                <td class="분류코드">c</td>
+                <td class="분류코드">
+                  {%for strength in competitor3_s%}
+                  {{strength}}
+                  <br>
+                  {%endfor%}
+                </td>
+                <td class="분류코드">
+                  {%for weakness in competitor3_w%}
+                  {{weakness}}
+                  <br>
+                  {%endfor%}
+                </td>
               </tr>
               <tr>
                 <td>{{companydata.competitor4}}</td>
                 <td class="분류코드">
-                {%for similar in similar4%}
-                {{similar}}
-                <br>
-                {%endfor%}
+                  {%for similar in similar4%}
+                  {{similar}}
+                  <br>
+                  {%endfor%}
                 </td>
-                <td class="분류코드">c</td>
-                <td class="분류코드">c</td>
+                <td class="분류코드">
+                  {%for strength in competitor4_s%}
+                  {{strength}}
+                  <br>
+                  {%endfor%}
+                </td>
+                <td class="분류코드">
+                  {%for weakness in competitor4_w%}
+                  {{weakness}}
+                  <br>
+                  {%endfor%}
+                </td>
               </tr>
               <tr>
                 <td>{{companydata.competitor5}}</td>
                 <td class="분류코드">
-                {%for similar in similar5%}
-                {{similar}}
-                <br>
-                {%endfor%}
+                  {%for similar in similar5%}
+                  {{similar}}
+                  <br>
+                  {%endfor%}
                 </td>
-                <td class="분류코드">c</td>
-                <td class="분류코드">c</td>
+                <td class="분류코드">
+                  {%for strength in competitor5_s%}
+                  {{strength}}
+                  <br>
+                  {%endfor%}
+                </td>
+                <td class="분류코드">
+                  {%for weakness in competitor5_w%}
+                  {{weakness}}
+                  <br>
+                  {%endfor%}
+                </td>
               </tr>
               {%endfor%}
             </tbody>
@@ -122,12 +172,12 @@
           <table id="경쟁력테이블">
             <thead>
               <tr>
-                <th> </th>
+                <th></th>
                 <th>유효특허수</th>
                 <th>피인용수</th>
                 <th>영향력 지수</th>
                 <th>기술력 지수</th>
-                
+
               </tr>
             </thead>
             <tbody>

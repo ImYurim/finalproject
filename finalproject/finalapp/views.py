@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views.generic.edit import FormView
-from .models import Company
+from .models import Company, Patent
 # Create your views here.
 
 
@@ -71,6 +71,56 @@ def competitorresult(request):
                 if s in competitor5_strength:
                     similar5.append(s)
 
+            competitor1_s = []
+            competitor1_w = []
+            for i in competitor1_strength:
+                patent1 = Patent.objects.get(name=competitor1_name, patent=i)
+                mycom = Patent.objects.get(name=company, patent=i)
+                if patent1.number > mycom.number:
+                    competitor1_s.append(i)
+                else:
+                    competitor1_w.append(i)
+
+            competitor2_s = []
+            competitor2_w = []
+            for i in competitor2_strength:
+                patent1 = Patent.objects.get(name=competitor2_name, patent=i)
+                mycom = Patent.objects.get(name=company, patent=i)
+                if patent1.number > mycom.number:
+                    competitor2_s.append(i)
+                else:
+                    competitor2_w.append(i)
+
+            competitor3_s = []
+            competitor3_w = []
+            for i in competitor3_strength:
+                patent1 = Patent.objects.get(name=competitor3_name, patent=i)
+                mycom = Patent.objects.get(name=company, patent=i)
+                if patent1.number > mycom.number:
+                    competitor3_s.append(i)
+                else:
+                    competitor3_w.append(i)
+
+            competitor4_s = []
+            competitor4_w = []
+            for i in competitor4_strength:
+                patent1 = Patent.objects.get(name=competitor4_name, patent=i)
+                mycom = Patent.objects.get(name=company, patent=i)
+                if patent1.number > mycom.number:
+                    competitor4_s.append(i)
+                else:
+                    competitor4_w.append(i)
+
+            competitor5_s = []
+            competitor5_w = []
+            for i in competitor5_strength:
+                patent1 = Patent.objects.get(name=competitor5_name, patent=i)
+                mycom = Patent.objects.get(name=company, patent=i)
+                if patent1.number > mycom.number:
+                    competitor5_s.append(i)
+                else:
+                    competitor5_w.append(i)
+
             patent_valid = mycompany.patent_valid
             cpp = round(mycompany.cpp, 3)
             pii = round(mycompany.pii, 3)
@@ -87,7 +137,7 @@ def competitorresult(request):
             ts_avg = (competitor1.ts + competitor2.ts +
                       competitor3.ts + competitor4.ts + competitor5.ts)/5
             ts_avg = round(ts_avg, 3)
-            return render(request, 'finalapp/competitorresult.html', {'companydetail': companydetail, 'company': company, 'similar1': similar1, 'similar2': similar2, 'similar3': similar3, 'similar4': similar4, 'similar5': similar5, 'patent_valid': patent_valid, 'cpp': cpp, 'pii': pii, 'ts': ts, 'patent_avg': patent_avg, 'cpp_avg': cpp_avg, 'pii_avg': pii_avg, 'ts_avg': ts_avg})
+            return render(request, 'finalapp/competitorresult.html', {'companydetail': companydetail, 'company': company, 'similar1': similar1, 'similar2': similar2, 'similar3': similar3, 'similar4': similar4, 'similar5': similar5, 'patent_valid': patent_valid, 'cpp': cpp, 'pii': pii, 'ts': ts, 'patent_avg': patent_avg, 'cpp_avg': cpp_avg, 'pii_avg': pii_avg, 'ts_avg': ts_avg, 'competitor1_s': competitor1_s, 'competitor1_w': competitor1_w, 'competitor2_s': competitor2_s, 'competitor2_w': competitor2_w, 'competitor3_s': competitor3_w, 'competitor4_s': competitor4_s, 'competitor4_w': competitor4_w, 'competitor5_s': competitor5_s, 'competitor5_w': competitor5_w})
         else:
             companyall = Company.objects.all()
             return render(request, 'finalapp/competitor.html', {'error': True, 'companyall': companyall})

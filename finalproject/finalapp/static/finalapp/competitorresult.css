@@ -16,7 +16,7 @@ html {
     display: grid;
     grid-template-areas: "upper" "content";
     grid-template-rows: 1fr  9fr;
-    height: 900px;
+    height: 1300px;
     width: 1500px;
     margin: 0px;
     padding: 0px;
@@ -67,7 +67,7 @@ a {
     padding-top:20px;
     margin-bottom:50px;
     display: grid;
-    grid-template-rows: 65px 70px 900px;
+    grid-template-rows: 65px 70px 1200px;
     height:1000px;
 }
 .제목 {
@@ -93,7 +93,7 @@ a {
 
   .결과 {
     display: grid;
-    grid-template-rows: 450px 450px;
+    grid-template-rows: 600px 600px;
   }
 .경쟁사
 {
