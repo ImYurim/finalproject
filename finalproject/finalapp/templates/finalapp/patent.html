@@ -6,7 +6,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="{%static 'finalapp/patent.css'%}">
+    <link rel="stylesheet" href="{%static 'finalapp/competitor.css'%}">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="{%static 'finalapp/select.js'%}"></script>
+
 </head>
 
 <body class="container">
@@ -18,18 +21,58 @@
         <a class="menu3" href="">용어 정의</a>
     </div>
     <div class="content">
-        <form id="input-form" action="{%url 'searchpatent'%}">
-            회사명 : <input type="text" id="company">
-            <input type="submit" value="검색" id="제출">
-        </form>
-        {%if companydetail%}
-        {%for company in companydetail%}
-        회사 이름 : {{compnay.name}}
-        특허 수 : {{company.number}}
-        {%endfor%}
-        {%endif%}
+        <div class="제목">
+            <canvas id="square" width="10" height="50"></canvas>
+            <span id="title">특허 추천</span>
+        </div>
+        <div class="잘못입력시">
+            {%if error%}
+            <p>잘못 입력하셨습니다. 다시 입력 해주세요!</p>
+            {%endif%}
+        </div>
+        <div class="search">
+            <div id="input-form">
+                <form id="input-form" action="{%url 'patentresult'%}">
+
+                    회사명 : <input type="text" id="company" name="company">
+                    <input type="submit" value="검색" id="제출">
+                </form>
+            </div>
+            <div id="목록명">
+                <table class="user-table">
+                    <thead>
+                        <tr>
+                            <th class="number">번호</th>
+                            <th class="select">회사명</th>
+
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div id="검색목록" style="overflow: auto;">
+                <table id="user-table">
+                    <tbody>
+                        {%for companyselect in companyall%}
+                        <tr>
+                            <td class="number">{{companyselect.id}}</td>
+                            <td class="select">{{companyselect.name}}</td>
+
+                        </tr>
+                        {%endfor%}
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
     </div>
 
 </body>
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        search();
+    })
+
+</script>
 
 </html>

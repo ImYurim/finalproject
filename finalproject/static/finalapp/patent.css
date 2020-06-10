@@ -1,74 +1,156 @@
 html {
-    background: url("../finalapp/background.jpg") no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    margin:0;
-    padding: 0;
-    height: 100%;
-  }
+  background: url("../finalapp/background.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  margin:0;
+  padding: 0;
+  height: 100%;
+}
 
 .container{
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%,0%);
-    display: grid;
-    grid-template-areas: "upper" "content";
-    grid-template-rows: 1fr  9fr;
-    height: 900px;
-    width: 1500px;
-    margin: 0px;
-    padding: 0px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%,0%);
+  display: grid;
+  grid-template-areas: "upper" "content";
+  grid-template-rows: 1fr  9fr;
+  height: 900px;
+  width: 1500px;
+  margin: 0px;
+  padding: 0px;
 
 }
 a {
-    color: white;
-    text-decoration: none;
+  color: white;
+  text-decoration: none;
 
-  }
+}
 
 .upper {
-    position: relative;
-    margin: 0 auto;
-    display: grid;
-    grid-template-areas: "home" "menu1" "menu2" "menu3";
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    margin:0px;
-    padding-bottom: 0px;
-    padding-top: 0px;
-    font-size: 20px;
-    text-align: center;
-    line-height: 1.0;
+  position: relative;
+  margin: 0 auto;
+  display: grid;
+  grid-template-areas: "home" "menu1" "menu2" "menu3";
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin:0px;
+  padding-bottom: 0px;
+  padding-top: 0px;
+  font-size: 20px;
+  text-align: center;
+  line-height: 1.0;
 
-  }
-  .home {
-    font-size: 40px;
-    margin: 0;
-    padding-top: 20px;
-    padding-bottom: 20px;
-  }
-  .menu1{
-      padding-top:30px;
-      padding-bottom: 20px;
-  }
-  .menu2{
-      padding-top:30px;
-      padding-bottom: 20px;
-  }
-  .menu3{
+}
+.home {
+  font-size: 40px;
+  margin: 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.menu1{
     padding-top:30px;
     padding-bottom: 20px;
 }
+.menu2{
+    padding-top:30px;
+    padding-bottom: 20px;
+}
+.menu3{
+  padding-top:30px;
+  padding-bottom: 20px;
+}
 .content {
-    background: white;
-    padding-bottom:20px;
-    margin-bottom:30px;
-    color: black;
+  background: white;
+  padding-bottom:20px;
+  padding-left:20px;
+  padding-top:20px;
+  margin-bottom:50px;
+  display: grid;
+  grid-template-rows: 65px 30px 900px;
+  height:1000px;
+}
+.제목 {
+  display: grid;
+  grid-template-columns: 20px auto;
+
+
+}
+
+#square {
+  background-color: rgb(0, 27, 66);
+}
+
+#title {
+  font-size: 33px;
+  font-weight: bold;
+  height: 55px;
+  padding-top: 7px;
+}
+
+
+.잘못입력시{
+height:20px;
+}
+
+
+.search{
+margin-left: 20px;
+  width: 1100px;
+  display: relative;
+  display: grid;
+  grid-template-rows: 100px 30px 500px;
+}
+#목록명{
+margin-left: 80px;
+width: 902px;
+
+}
+#검색목록{
+margin-top: 2px;
+margin-left: 80px;
+width: 900px;
+border: 1px solid navy;
+}
+
+
+#input-form{
+
+grid-row: 1/2;
+margin-top: 10px; margin-bottom: 10px;
+}
+#company{
+  width:900px;
+  height: 20px;
+  margin: 20px;
+}
+#제출{
+  width: 60px;
+  height: 60px;
+  padding: 2px;
+  margin: 0px;
+  font-size: 50px;
+}
+#user-table{
+
+text-align: center;
+
+}
+.user-table{
+
+text-align: center;
+border-collapse: collapse;
+}
+.user-table > thead > tr > th { padding: 8px; }
+.number{
+width:80px;
+}
+.select{
+width:800px;
 }
 
 
 
 
-
-
+.user-table > thead > tr { background-color: rgb(35, 42, 78); color:#fff; }
+.user-table > tbody > tr > td { border-bottom: 1px solid gray; padding:8px; }

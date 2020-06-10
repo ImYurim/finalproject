@@ -59,7 +59,7 @@
                 <br>
                 {%endfor%}
                 </td>
-                <td class="분류코드">a</>
+                <td class="분류코드">a</td>
                 <td class="분류코드">a</td>
               </tr>
               <tr>
@@ -124,25 +124,26 @@
               <tr>
                 <th> </th>
                 <th>유효특허수</th>
+                <th>피인용수</th>
                 <th>영향력 지수</th>
                 <th>기술력 지수</th>
-                <th>기술 자립도</th>
+                
               </tr>
             </thead>
             <tbody>
               <tr>
                 <th>자사</th>
-                <td>1</td>
-                <td>2</td>
-                <td>3</td>
-                <td>4</td>
+                <td>{{patent_valid}}</td>
+                <td>{{cpp}}</td>
+                <td>{{pii}}</td>
+                <td>{{ts}}</td>
               </tr>
               <tr>
                 <th>경쟁사 평균</th>
-                <td>5</td>
-                <td>6</td>
-                <td>7</td>
-                <td>8</td>
+                <td>{{patent_avg}}</td>
+                <td>{{cpp_avg}}</td>
+                <td>{{pii_avg}}</td>
+                <td>{{ts_avg}}</td>
               </tr>
             </tbody>
           </table>

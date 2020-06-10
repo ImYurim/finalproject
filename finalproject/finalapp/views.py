@@ -71,7 +71,23 @@ def competitorresult(request):
                 if s in competitor5_strength:
                     similar5.append(s)
 
-            return render(request, 'finalapp/competitorresult.html', {'companydetail': companydetail, 'company': company, 'similar1': similar1, 'similar2': similar2, 'similar3': similar3, 'similar4': similar4, 'similar5': similar5})
+            patent_valid = mycompany.patent_valid
+            cpp = round(mycompany.cpp, 3)
+            pii = round(mycompany.pii, 3)
+            ts = round(mycompany.ts, 3)
+            patent_avg = (competitor1.patent_valid + competitor2.patent_valid +
+                          competitor3.patent_valid + competitor4.patent_valid + competitor5.patent_valid) / 5
+            patent_avg = round(patent_avg, 3)
+            cpp_avg = (competitor1.cpp + competitor2.cpp +
+                       competitor3.cpp + competitor4.cpp + competitor5.cpp)/5
+            cpp_avg = round(cpp_avg, 3)
+            pii_avg = (competitor1.pii + competitor2.pii +
+                       competitor3.pii + competitor4.pii + competitor5.pii) / 5
+            pii_avg = round(pii_avg, 3)
+            ts_avg = (competitor1.ts + competitor2.ts +
+                      competitor3.ts + competitor4.ts + competitor5.ts)/5
+            ts_avg = round(ts_avg, 3)
+            return render(request, 'finalapp/competitorresult.html', {'companydetail': companydetail, 'company': company, 'similar1': similar1, 'similar2': similar2, 'similar3': similar3, 'similar4': similar4, 'similar5': similar5, 'patent_valid': patent_valid, 'cpp': cpp, 'pii': pii, 'ts': ts, 'patent_avg': patent_avg, 'cpp_avg': cpp_avg, 'pii_avg': pii_avg, 'ts_avg': ts_avg})
         else:
             companyall = Company.objects.all()
             return render(request, 'finalapp/competitor.html', {'error': True, 'companyall': companyall})
@@ -81,9 +97,23 @@ def competitorresult(request):
 
 
 def searchpatent(request):
-    if request.GET.get('company'):
-        companyname = request.GET.get('company')
-        companydetail = Company.objects.all().filter(name="companyname")
-        return render(request, 'finalapp/patent.html', {'companydetail': companydetail})
+    companyall = Company.objects.all()
+    return render(request, 'finalapp/patent.html', {'companyall': companyall})
+
+
+def patentresult(request):
+    if 'company' in request.GET and request.GET['company']:
+        company = request.GET['company']
+        companydetail = Company.objects.all().filter(
+            name=company)
+        if companydetail:
+            mycompany = Company.objects.get(name=company)
+            return render(request, 'finalapp/patentresult.html', {'companydetail': companydetail, 'company': company})
+        else:
+            companyall = Company.objects.all()
+            return render(request, 'finalapp/patent.html', {'error': True, 'companyall': companyall})
     else:
-        return render(request, 'finalapp/patent.html')
+        companyall = Company.objects.all()
+        return render(request, 'finalapp/patent.html', {'error': True, 'companyall': companyall})
+
+    return render(request, 'finalapp/patentresult.html')

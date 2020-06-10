@@ -1,0 +1,137 @@
+html {
+    background: url("../finalapp/background.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    margin:0;
+    padding: 0;
+    height: 100%;
+  }
+
+.container{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,0%);
+    display: grid;
+    grid-template-areas: "upper" "content";
+    grid-template-rows: 1fr  9fr;
+    height: 900px;
+    width: 1500px;
+    margin: 0px;
+    padding: 0px;
+
+}
+a {
+    color: white;
+    text-decoration: none;
+
+  }
+
+.upper {
+    position: relative;
+    margin: 0 auto;
+    display: grid;
+    grid-template-areas: "home" "menu1" "menu2" "menu3";
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin:0px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    font-size: 20px;
+    text-align: center;
+    line-height: 1.0;
+
+  }
+  .home {
+    font-size: 40px;
+    margin: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .menu1{
+      padding-top:30px;
+      padding-bottom: 20px;
+  }
+  .menu2{
+      padding-top:30px;
+      padding-bottom: 20px;
+  }
+  .menu3{
+    padding-top:30px;
+    padding-bottom: 20px;
+}
+.content {
+    background: white;
+    padding-bottom:20px;
+    padding-left:20px;
+    padding-top:20px;
+    margin-bottom:50px;
+    display: grid;
+    grid-template-rows: 65px 70px 900px;
+    height:1000px;
+}
+.제목 {
+    display: grid;
+    grid-template-columns: 20px auto;
+
+
+  }
+
+  #square {
+    background-color: rgb(0, 27, 66);
+  }
+
+  #title {
+    font-size: 33px;
+    font-weight: bold;
+    height: 55px;
+    padding-top: 7px;
+  }
+  .자회사{
+    text-decoration: underline;
+  }
+
+  .결과 {
+    display: grid;
+    grid-template-rows: 450px 450px;
+  }
+.특허
+{
+    margin-top: 30px;
+    display: grid;
+    grid-template-rows:1fr 9fr;
+}
+  .특허분석간략{
+      display: grid;
+      grid-template-columns: 1fr 9fr;
+      margin-bottom: 20px;
+      height:40px;
+  }
+  
+  .소제목 {
+    background-color: rgb(242, 242, 242);
+    padding-top: 10px;
+
+    text-align: center;
+    font-weight: bold;
+    height:30px;
+
+  }
+.설명{
+    margin-top: 10px;
+    margin-left:20px;
+    margin-bottom: 5px;
+}
+.특허분석결과{
+    margin-top: 20px;
+    margin-left: 160px;
+    height: 300px;
+
+
+}
+
+
+
+
+
+

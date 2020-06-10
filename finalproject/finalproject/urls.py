@@ -22,6 +22,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', finalapp.views.home, name="home"),
     path('competitor/', finalapp.views.competitor, name="competitor"),
+    path('competitorresult/', finalapp.views.competitorresult,
+         name="competitorresult"),
     path('patent/', finalapp.views.searchpatent, name="searchpatent"),
-    path('patentresult/', finalapp.views.competitorresult, name="competitorresult"),
+    path('patentresult/', finalapp.views.patentresult, name="patentresult"),
 ]
