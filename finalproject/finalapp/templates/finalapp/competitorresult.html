@@ -52,8 +52,14 @@
             {%for companydata in companydetail%}
               <tr>
                 <td>{{companydata.competitor1}}</td>
-                <td class="분류코드">a</td>
-                <td class="분류코드">a</td>
+                
+                <td class="분류코드">
+                {%for similar in similar1%}
+                {{similar}}
+                <br>
+                {%endfor%}
+                </td>
+                <td class="분류코드">a</>
                 <td class="분류코드">a</td>
               </tr>
               <tr>
