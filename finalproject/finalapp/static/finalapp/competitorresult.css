@@ -15,7 +15,7 @@ html {
     transform: translate(-50%,0%);
     display: grid;
     grid-template-areas: "upper" "content";
-    grid-template-rows: 1fr  9fr;
+    grid-template-rows: 1fr  12fr;
     height: 1300px;
     width: 1500px;
     margin: 0px;
@@ -68,7 +68,7 @@ a {
     margin-bottom:50px;
     display: grid;
     grid-template-rows: 65px 70px 1200px;
-    height:1000px;
+    height:1200px;
 }
 .제목 {
     display: grid;
@@ -154,7 +154,7 @@ a {
 }
 
   table {
-    width: 1200px;
+    width: 900px;
     border: 2px solid rgb(230, 230, 230);
     border-collapse: collapse;
     height: 200px;
@@ -180,6 +180,7 @@ a {
   }
 
   .분류코드:hover {
-    background-color: #7DA5E1;
-    text-decoration: underline;
+    background-color: rgb(90, 116, 156);
+
+    color:white;
   }

@@ -60,7 +60,6 @@ a {
     padding-top:30px;
     padding-bottom: 20px;
 }
-
 .content {
     background: white;
     padding-bottom:20px;
@@ -68,18 +67,20 @@ a {
     padding-top:20px;
     margin-bottom:50px;
     display: grid;
-    grid-template-rows: 1fr 1fr 8fr;
+    grid-template-rows: 65px 30px 900px;
     height:1000px;
 }
-
-
-  .제목 {
+.제목 {
     display: grid;
     grid-template-columns: 20px auto;
+
+
   }
+
   #square {
-    background-color: rgb(0,27,66);
+    background-color: rgb(0, 27, 66);
   }
+
   #title {
     font-size: 33px;
     font-weight: bold;
@@ -87,47 +88,69 @@ a {
     padding-top: 7px;
   }
 
-.search{
-    display: relative;
-    grid-row: 2/3;
-    display: grid;
-    grid-template-rows: 1fr 9fr;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    width: 960px; margin: 0 auto;
+
+.잘못입력시{
+  height:20px;
 }
+
+
+.search{
+  margin-left: 20px;
+    width: 1100px;
+    display: relative;
+    display: grid;
+    grid-template-rows: 100px 30px 500px;
+}
+#목록명{
+  margin-left: 80px;
+  width: 902px;
+
+}
+#검색목록{
+  margin-top: 2px;
+  margin-left: 80px;
+  width: 900px;
+  border: 1px solid navy;
+}
+
 
 #input-form{
 
 grid-row: 1/2;
-grid-column: 2/4;
 margin-top: 10px; margin-bottom: 10px;
-text-align: center;
 }
 #company{
-    width:200px;
+    width:900px;
     height: 20px;
     margin: 20px;
 }
 #제출{
     width: 60px;
-    height: 60px;
+    height: 30px;
     padding: 2px;
     margin: 0px;
-    font-size: 50px;
+    font-size: 20px;
 }
 #user-table{
-    grid-row: 2/3;
-    grid-column: 1/5;
-    margin: 0 auto; 
-    text-align: center;
-    border-collapse: collapse;
+
+  text-align: center;
+
+}
+.user-table{
+
+  text-align: center;
+  border-collapse: collapse;
+}
+.user-table > thead > tr > th { padding: 8px; }
+.number{
+  width:80px;
+}
+.select{
+  width:800px;
 }
 
 
 
 
-
-
-#user-table > thead > tr { background-color: #333; color:#fff; }
-#user-table > thead > tr > th { padding: 8px; width: 150px; }
-#user-table > tbody > tr > td { border-bottom: 1px solid gray; padding:8px; }
+.user-table > thead > tr { background-color: rgb(35, 42, 78); color:#fff; }
+.user-table > tbody > tr > td { border-bottom: 1px solid gray; padding:8px; }

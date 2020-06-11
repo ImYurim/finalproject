@@ -15,8 +15,8 @@ html {
     transform: translate(-50%,0%);
     display: grid;
     grid-template-areas: "upper" "content";
-    grid-template-rows: 1fr  9fr;
-    height: 900px;
+    grid-template-rows: 1fr  12fr;
+    height: 1300px;
     width: 1500px;
     margin: 0px;
     padding: 0px;
@@ -68,7 +68,7 @@ a {
     margin-bottom:50px;
     display: grid;
     grid-template-rows: 65px 70px 1200px;
-    height:1000px;
+    height:1200px;
 }
 .제목 {
     display: grid;
@@ -154,7 +154,7 @@ a {
 }
 
   table {
-    width: 1200px;
+    width: 900px;
     border: 2px solid rgb(230, 230, 230);
     border-collapse: collapse;
     height: 200px;
