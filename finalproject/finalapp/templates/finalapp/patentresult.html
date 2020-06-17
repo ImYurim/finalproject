@@ -32,13 +32,52 @@
         {%endif%}
 
         <div class="결과">
+            <div class="특허추천">
+                <div class="특허추천간략">
+                    <span class="소제목">매입 특허 추천</span>
+                    <span class="설명">매입할 특허를 분야별로 추천</span>
+
+                </div>
+                <div class="특허추천결과">
+
+
+                </div>
+            </div>
             <div class="특허">
                 <div class="특허분석간략">
-                    <span class="소제목">특허 추천</span>
-                    <span class="설명">이전가능성이 높고 영향력이 높은 특허 추천</span>
+                    <span class="소제목">경쟁력 변화</span>
+                    <span class="설명">특허 매입 후 경쟁력 변화</span>
 
                 </div>
                 <div class="특허분석결과">
+                    <table id="경쟁력테이블">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>유효특허수</th>
+                                <th>피인용수</th>
+                                <th>영향력 지수</th>
+                                <th>기술력 지수</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>매입 전</th>
+                                <td>5097</td>
+                                <td>10.473</td>
+                                <td>0.654</td>
+                                <td>3492.949</td>
+                            </tr>
+                            <tr>
+                                <th>매입 후</th>
+                                <td>5098</td>
+                                <td>11.424</td>
+                                <td>0.712</td>
+                                <td>3562.594</td>
+                            </tr>
+                        </tbody>
+                    </table>
 
                 </div>
             </div>

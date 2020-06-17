@@ -43,15 +43,15 @@
             <thead>
               <tr>
                 <th class="회사명">회사명</th>
-                <th class="나머지">유사점</th>
-                <th class="나머지">강점</th>
-                <th class="나머지">약점</th>
+                <th class="표제목">유사점</th>
+                <th class="표제목">강점</th>
+                <th class="표제목">약점</th>
               </tr>
             </thead>
             <tbody>
               {%for companydata in companydetail%}
               <tr>
-                <td>{{companydata.competitor1}}</td>
+                <td class="표제목">{{companydata.competitor1}}</td>
 
                 <td>
                   {%for similar in similar1%}
@@ -76,7 +76,7 @@
                 </td>
               </tr>
               <tr>
-                <td>{{companydata.competitor2}}</td>
+                <td class="표제목">{{companydata.competitor2}}</td>
                 <td>
                   {%for similar in similar2%}
                   <div class="분류코드">
@@ -100,7 +100,7 @@
                 </td>
               </tr>
               <tr>
-                <td>{{companydata.competitor3}}</td>
+                <td class="표제목">{{companydata.competitor3}}</td>
                 <td>
                   {%for similar in similar3%}
                   <div class="분류코드">
@@ -124,7 +124,7 @@
                 </td>
               </tr>
               <tr>
-                <td>{{companydata.competitor4}}</td>
+                <td class="표제목">{{companydata.competitor4}}</td>
                 <td>
                   {%for similar in similar4%}
                   <div class="분류코드">
@@ -148,7 +148,7 @@
                 </td>
               </tr>
               <tr>
-                <td>{{companydata.competitor5}}</td>
+                <td class="표제목">{{companydata.competitor5}}</td>
                 <td>
                   {%for similar in similar5%}
                   <div class="분류코드">

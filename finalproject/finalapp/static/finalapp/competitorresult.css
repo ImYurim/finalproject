@@ -132,8 +132,6 @@ a {
 
 
 
-
-
 .특허경쟁력
 {
     display: grid;
@@ -154,7 +152,7 @@ a {
 }
 
   table {
-    width: 900px;
+    width: 1200px;
     border: 2px solid rgb(230, 230, 230);
     border-collapse: collapse;
     height: 200px;
@@ -168,7 +166,8 @@ a {
   }
 
   .회사명 {
-    width: 600px;
+    width: 400px;
+
   }
 
   .나머지 {

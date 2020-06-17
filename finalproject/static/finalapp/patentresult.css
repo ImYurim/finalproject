@@ -130,6 +130,20 @@ a {
 
 }
 
+table {
+  width: 1200px;
+  border: 2px solid rgb(230, 230, 230);
+  border-collapse: collapse;
+  height: 200px;
+}
+
+tr,
+th,
+td {
+  border: 2px solid rgb(230, 230, 230);
+  text-align: center;
+}
+
 
 
 

@@ -101,13 +101,25 @@ a {
     display: grid;
     grid-template-rows:1fr 9fr;
 }
+.특허추천
+{
+  margin-top: 30px;
+    display: grid;
+    grid-template-rows:1fr 9fr;
+}
   .특허분석간략{
       display: grid;
       grid-template-columns: 1fr 9fr;
       margin-bottom: 20px;
       height:40px;
   }
-  
+
+  .특허추천간략{
+    display: grid;
+    grid-template-columns: 1fr 9fr;
+    margin-bottom: 20px;
+    height:40px;
+}
   .소제목 {
     background-color: rgb(242, 242, 242);
     padding-top: 10px;
@@ -128,6 +140,27 @@ a {
     height: 300px;
 
 
+}
+.특허추천결과{
+  margin-top: 20px;
+  margin-left: 160px;
+  height: 300px;
+
+
+}
+
+table {
+  width: 1200px;
+  border: 2px solid rgb(230, 230, 230);
+  border-collapse: collapse;
+  height: 200px;
+}
+
+tr,
+th,
+td {
+  border: 2px solid rgb(230, 230, 230);
+  text-align: center;
 }
 
 
