@@ -41,3 +41,11 @@ class Patent(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class IPC(models.Model):
+    patent = models.CharField(max_length=100)
+    explain = models.CharField(max_length=1000)
+
+    def __str__(self):
+        return self.patent

@@ -6,6 +6,8 @@
   <meta charset="utf-8">
   <title>경쟁사분석</title>
   <link rel="stylesheet" href="{%static 'finalapp/competitorresult.css'%}">
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
 
 </head>
 
@@ -193,8 +195,8 @@
             </thead>
             <tbody>
               <tr>
-                <td>분야</td>
-                <td>블라블라</td>
+                <td id="patentipc"></td>
+                <td id="ipcexplain"></td>
               </tr>
             </tbody>
           </table>
@@ -241,5 +243,24 @@
     </div>
   </div>
 </body>
+<script>
+
+  $(".분류코드").click(function () {
+    var ipc = $(this).text();
+    $.ajax({
+      dataType: 'json',
+      url: "{%url 'patentexplain'%}",
+      data: { 'patent': ipc, 'is_ajax': true },
+      success: function (data) {
+        $("#patentipc").text(data['explain']);
+        $("#ipcexplain").text(data['explain'])
+      },
+      error: function (request, status, error) {
+        alert('통신실패');
+        alert(error);
+      }
+    })
+  })
+</script>
 
 </html>

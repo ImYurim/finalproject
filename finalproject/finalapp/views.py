@@ -1,6 +1,9 @@
 from django.shortcuts import render, redirect
 from django.views.generic.edit import FormView
-from .models import Company, Patent
+from .models import Company, Patent, IPC
+import json
+from django.http import HttpResponse, JsonResponse
+
 # Create your views here.
 
 
@@ -144,6 +147,15 @@ def competitorresult(request):
     else:
         companyall = Company.objects.all()
         return render(request, 'finalapp/competitor.html', {'error': True, 'companyall': companyall})
+
+
+def patentexplain(request):
+    is_ajax = request.GET.get('is_ajax')
+    if is_ajax:
+        explain = request.GET.get('patent')
+        return JsonResponse({'explain': explain}, json_dumps_params={'ensure_ascii': False})
+    else:
+        return redirect(home)
 
 
 def searchpatent(request):
