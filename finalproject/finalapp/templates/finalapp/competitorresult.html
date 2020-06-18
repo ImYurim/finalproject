@@ -57,21 +57,21 @@
 
                 <td>
                   {%for similar in similar1%}
-                  <div class="분류코드">
+                  <div class="분류코드" data-value="{{similar}}">
                     {{similar}}
                   </div>
                   {%endfor%}
                 </td>
                 <td>
                   {%for strength in competitor1_s%}
-                  <div class="분류코드">
+                  <div class="분류코드" data-value="{{strength}}">
                     {{strength}}
                   </div>
                   {%endfor%}
                 </td>
                 <td>
                   {%for weakness in competitor1_w%}
-                  <div class="분류코드">
+                  <div class="분류코드" data-value="{{weakness}}">
                     {{weakness}}
                   </div>
                   {%endfor%}
@@ -81,21 +81,21 @@
                 <td class="표제목">{{companydata.competitor2}}</td>
                 <td>
                   {%for similar in similar2%}
-                  <div class="분류코드">
+                  <div class="분류코드" data-value="{{similar}}">
                     {{similar}}
                   </div>
                   {%endfor%}
                 </td>
                 <td>
                   {%for strength in competitor2_s%}
-                  <div class="분류코드">
+                  <div class="분류코드" data-value="{{strength}}">
                     {{strength}}
                   </div>
                   {%endfor%}
                 </td>
                 <td>
                   {%for weakness in competitor2_w%}
-                  <div class="분류코드">
+                  <div class="분류코드" data-value="{{weakness}}">
                     {{weakness}}
                   </div>
                   {%endfor%}
@@ -105,21 +105,21 @@
                 <td class="표제목">{{companydata.competitor3}}</td>
                 <td>
                   {%for similar in similar3%}
-                  <div class="분류코드">
+                  <div class="분류코드" data-value="similar">
                     {{similar}}
                   </div>
                   {%endfor%}
                 </td>
                 <td>
                   {%for strength in competitor3_s%}
-                  <div class="분류코드">
+                  <div class="분류코드" data-value="{{strength}}">
                     {{strength}}
                   </div>
                   {%endfor%}
                 </td>
                 <td>
                   {%for weakness in competitor3_w%}
-                  <div class="분류코드">
+                  <div class="분류코드" data-value="{{weakness}}">
                     {{weakness}}
                   </div>
                   {%endfor%}
@@ -129,21 +129,21 @@
                 <td class="표제목">{{companydata.competitor4}}</td>
                 <td>
                   {%for similar in similar4%}
-                  <div class="분류코드">
+                  <div class="분류코드" data-value="{{similar}}">
                     {{similar}}
                   </div>
                   {%endfor%}
                 </td>
                 <td>
                   {%for strength in competitor4_s%}
-                  <div class="분류코드">
+                  <div class="분류코드" data-value="{{strength}}">
                     {{strength}}
                   </div>
                   {%endfor%}
                 </td>
                 <td>
                   {%for weakness in competitor4_w%}
-                  <div class="분류코드">
+                  <div class="분류코드" data-value="{{weakness}}">
                     {{weakness}}
                   </div>
                   {%endfor%}
@@ -153,21 +153,21 @@
                 <td class="표제목">{{companydata.competitor5}}</td>
                 <td>
                   {%for similar in similar5%}
-                  <div class="분류코드">
+                  <div class="분류코드" data-value="{{similar}}">
                     {{similar}}
                   </div>
                   {%endfor%}
                 </td>
                 <td>
                   {%for strength in competitor5_s%}
-                  <div class="분류코드">
+                  <div class="분류코드" data-value="{{strength}}">
                     {{strength}}
                   </div>
                   {%endfor%}
                 </td>
                 <td>
                   {%for weakness in competitor5_w%}
-                  <div class="분류코드">
+                  <div class="분류코드" data-value="{{weakness}}">
                     {{weakness}}
                   </div>
                   {%endfor%}
@@ -246,13 +246,13 @@
 <script>
 
   $(".분류코드").click(function () {
-    var ipc = $(this).text();
+    var ipc = $(this).data("value");
     $.ajax({
       dataType: 'json',
       url: "{%url 'patentexplain'%}",
       data: { 'patent': ipc, 'is_ajax': true },
       success: function (data) {
-        $("#patentipc").text(data['explain']);
+        $("#patentipc").text(data['ipc']);
         $("#ipcexplain").text(data['explain'])
       },
       error: function (request, status, error) {

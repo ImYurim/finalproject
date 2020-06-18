@@ -152,8 +152,13 @@ def competitorresult(request):
 def patentexplain(request):
     is_ajax = request.GET.get('is_ajax')
     if is_ajax:
-        explain = request.GET.get('patent')
-        return JsonResponse({'explain': explain}, json_dumps_params={'ensure_ascii': False})
+        ipc = request.GET.get('patent')
+        ipc_detail = IPC.objects.get(patent__contains=ipc)
+        if ipc_detail:
+            explain = ipc_detail.explain
+            return JsonResponse({'explain': explain, 'ipc': ipc}, json_dumps_params={'ensure_ascii': False})
+        else:
+            return JsonResponse({'explain': explain}, json_dumps_params={'ensure_ascii': False})
     else:
         return redirect(home)
 
