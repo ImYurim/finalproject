@@ -105,7 +105,7 @@
                 <td class="표제목">{{companydata.competitor3}}</td>
                 <td>
                   {%for similar in similar3%}
-                  <div class="분류코드" data-value="similar">
+                  <div class="분류코드" data-value="{{similar}}">
                     {{similar}}
                   </div>
                   {%endfor%}
@@ -195,8 +195,8 @@
             </thead>
             <tbody>
               <tr>
-                <td id="patentipc"></td>
-                <td id="ipcexplain"></td>
+                <td id="patentipc" style="width: 100px;"></td>
+                <td id="ipcexplain" style="width:1100px;"></td>
               </tr>
             </tbody>
           </table>
