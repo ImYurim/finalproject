@@ -49,3 +49,23 @@ class IPC(models.Model):
 
     def __str__(self):
         return self.patent
+
+
+class Patentdetail(models.Model):
+    patent = models.CharField(max_length=100)
+    patentnumber = models.CharField(max_length=200)
+    date = models.CharField(max_length=200)
+    representative = models.CharField(max_length=200)
+    country = models.CharField(max_length=50)
+    independentclaimnumber = models.IntegerField()
+    totalclaimnumber = models.IntegerField()
+    quotation = models.IntegerField()
+    citation = models.IntegerField()
+    valid = models.CharField(max_length=100)
+    familypatentnumber = models.IntegerField()
+    impact = models.FloatField()
+    transfer = models.FloatField()
+    promising = models.FloatField()
+
+    def __str__(self):
+        return self.patentnumber

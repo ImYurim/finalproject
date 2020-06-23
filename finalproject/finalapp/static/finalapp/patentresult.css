@@ -87,13 +87,19 @@ a {
     height: 55px;
     padding-top: 7px;
   }
+  #검색목록{
+    margin-top: 2px;
+    margin-left: 80px;
+    width: 900px;
+    border: 1px solid navy;
+  }
   .자회사{
     text-decoration: underline;
   }
 
   .결과 {
     display: grid;
-    grid-template-rows: 450px 450px;
+    grid-template-rows: 600px 450px;
   }
 .특허
 {
@@ -114,12 +120,7 @@ a {
       height:40px;
   }
 
-  .특허추천간략{
-    display: grid;
-    grid-template-columns: 1fr 9fr;
-    margin-bottom: 20px;
-    height:40px;
-}
+
   .소제목 {
     background-color: rgb(242, 242, 242);
     padding-top: 10px;
