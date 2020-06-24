@@ -16,7 +16,7 @@ html {
     display: grid;
     grid-template-areas: "upper" "content";
     grid-template-rows: 1fr  9fr;
-    height: 900px;
+    height: 1500px;
     width: 1500px;
     margin: 0px;
     padding: 0px;
@@ -67,8 +67,8 @@ a {
     padding-top:20px;
     margin-bottom:50px;
     display: grid;
-    grid-template-rows: 65px 70px 900px;
-    height:1000px;
+    grid-template-rows: 65px 70px 1500px;
+    height:1500px;
 }
 .제목 {
     display: grid;
@@ -87,13 +87,19 @@ a {
     height: 55px;
     padding-top: 7px;
   }
+  #검색목록{
+    width: 1200px;
+    border: 1px solid navy;
+    height:200px;
+
+  }
   .자회사{
     text-decoration: underline;
   }
 
   .결과 {
     display: grid;
-    grid-template-rows: 450px 450px;
+    grid-template-rows: 400px 400px 450px;
   }
 .특허
 {
@@ -101,13 +107,29 @@ a {
     display: grid;
     grid-template-rows:1fr 9fr;
 }
+.특허설명{
+  margin-top:30px;
+}
+.특허추천
+{
+  margin-top: 30px;
+    display: grid;
+    grid-template-rows:1fr 9fr;
+}
   .특허분석간략{
       display: grid;
       grid-template-columns: 1fr 9fr;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
       height:40px;
   }
-  
+  .특허추천간략{
+      display: grid;
+      grid-template-columns: 1fr 9fr;
+      
+      height:40px;
+  }
+
+
   .소제목 {
     background-color: rgb(242, 242, 242);
     padding-top: 10px;
@@ -130,11 +152,42 @@ a {
 
 }
 
+.특허추천결과{
+  
+  margin-left: 160px;
+  height: 300px;
+
+
+}
+.특허정보{
+  margin-top: 20px;
+  margin-left: 160px;
+  height: 300px;
+
+
+}
+.user-table{
+
+  text-align: center;
+  border-collapse: collapse;
+}
+
+.user-table > thead > tr > th { padding: 8px; }
+
+.user-table > thead > tr { background-color: rgb(35, 42, 78); color:#fff; }
+.user-table > tbody > tr > td { border-bottom: 1px solid gray; padding:8px; }
+
+.number{
+  width:300px;
+}
+.select{
+  width:894px;
+}
+
 table {
   width: 1200px;
   border: 2px solid rgb(230, 230, 230);
   border-collapse: collapse;
-  height: 200px;
 }
 
 tr,
@@ -143,7 +196,21 @@ td {
   border: 2px solid rgb(230, 230, 230);
   text-align: center;
 }
+.출원번호{
+  width:300px;
+}
+.특허선텍셀{
+  background-color: white;
+  
+}
+.정보{
+  margin-bottom:20px;
+}
+.특허선택셀:hover {
+background-color: rgb(90, 116, 156);
 
+color:white;
+}
 
 
 

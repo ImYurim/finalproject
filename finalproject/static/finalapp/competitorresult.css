@@ -67,8 +67,8 @@ a {
     padding-top:20px;
     margin-bottom:50px;
     display: grid;
-    grid-template-rows: 65px 70px 1200px;
-    height:1200px;
+    grid-template-rows: 65px 70px 1500px;
+    height:1700px;
 }
 .제목 {
     display: grid;
@@ -93,7 +93,7 @@ a {
 
   .결과 {
     display: grid;
-    grid-template-rows: 600px 600px;
+    grid-template-rows: 600px 300px 600px;
   }
 .경쟁사
 {
@@ -130,7 +130,24 @@ a {
 
 }
 
+.특허분야소개
+{
+    display: grid;
+    grid-template-rows:1fr 9fr;
+}
+  .특허분야소개간략{
+      display: grid;
+      grid-template-columns: 1fr 9fr;
+      margin-bottom: 20px;
+      height:40px;
+  }
+  
+.특허설명결과{
+    margin-top: 20px;
+    margin-left: 160px;
 
+
+}
 
 .특허경쟁력
 {
@@ -156,6 +173,12 @@ a {
     border: 2px solid rgb(230, 230, 230);
     border-collapse: collapse;
     height: 200px;
+  }
+
+  .특허설명결과 table{
+    width:1200px;
+    height:40px;
+
   }
 
   tr,
