@@ -5,6 +5,7 @@ from django.db import models
 
 class Company(models.Model):
     name = models.CharField(max_length=300)
+    patent_num = models.IntegerField()
     strength1 = models.CharField(max_length=100)
     strength2 = models.CharField(max_length=100)
     strength3 = models.CharField(max_length=100)
@@ -62,6 +63,7 @@ class Patentdetail(models.Model):
     quotation = models.IntegerField()
     citation = models.IntegerField()
     valid = models.CharField(max_length=100)
+    name = models.CharField(max_length=600)
     familypatentnumber = models.IntegerField()
     impact = models.FloatField()
     transfer = models.FloatField()

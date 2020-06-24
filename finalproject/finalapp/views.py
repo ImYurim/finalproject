@@ -190,10 +190,12 @@ def patentresult(request):
 def patentselect(request):
     is_ajax = request.GET.get('is_ajax')
     if is_ajax:
+        selectipc = request.GET.get('selectipc')
         patentselectnumber = request.GET.get('patentselectnumber')
         patent_detail = Patentdetail.objects.get(
-            patentnumber__contains=patentselectnumber)
+            patentnumber__contains=patentselectnumber, patent__contains=selectipc)
         date = patent_detail.date
+        name = patent_detail.name
         representative = patent_detail.representative
         country = patent_detail.country
         independentclaimnumber = patent_detail.independentclaimnumber
@@ -207,16 +209,20 @@ def patentselect(request):
         promising = patent_detail.promising
 
         company = request.GET.get('companyselect')
+
         companydetail = Company.objects.get(name=company)
         patentvalid_b = companydetail.patent_valid
         patentvalid_a = patentvalid_b+1
         cpp_b = round(companydetail.cpp, 3)
-        cpp_a =
+        cpp_a = ((cpp_b*companydetail.patent_num)+citation) / \
+            (companydetail.patent_num+1)
+        cpp_a = round(cpp_a, 3)
         pii_b = round(companydetail.pii, 3)
-        pii_a = cpp_a/16.1684
+        pii_a = round(cpp_a/16.1684, 3)
         ts_b = round(companydetail.ts, 3)
-        ts_a = pii_a*(+1)
-        return JsonResponse({'date': date, 'patentselectnumber': patentselectnumber, 'representative': representative, 'country': country, 'independentclaimnumber': independentclaimnumber, 'totalclaimnumber': totalclaimnumber, 'quotation': quotation, 'citation': citation, 'valid': valid, 'familypatentnumber': familypatentnumber, 'impact': impact, 'transfer': transfer, 'promising': promising}, json_dumps_params={'ensure_ascii': False})
+        ts_a = round(pii_a*(companydetail.patent_num+1), 3)
+
+        return JsonResponse({'date': date, 'ts_a': ts_a, 'ts_b': ts_b, 'pii_a': pii_a, 'pii_b': pii_b, 'cpp_a': cpp_a, 'cpp_b': cpp_b, 'patentvalid_a': patentvalid_a, 'patentvalid_b': patentvalid_b, 'patentselectnumber': patentselectnumber, 'representative': representative, 'name': name, 'country': country, 'independentclaimnumber': independentclaimnumber, 'totalclaimnumber': totalclaimnumber, 'quotation': quotation, 'citation': citation, 'valid': valid, 'familypatentnumber': familypatentnumber, 'impact': impact, 'transfer': transfer, 'promising': promising}, json_dumps_params={'ensure_ascii': False})
 
     else:
         return redirect(home)

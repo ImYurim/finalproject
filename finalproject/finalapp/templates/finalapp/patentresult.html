@@ -41,14 +41,14 @@
                 </div>
                 <div class="특허추천결과">
                     <div id="분야선택" style="width:100%">
-                        선택한 분야 : {{ipc}}
+                        <h3>선택한 분야 : <span id="selectipc" data-value="{{ipc}}">{{ipc}}</span></h3>
                     </div>
                     <div id="목록명">
                         <table class="user-table" style="width:1205px; border:0">
                             <thead>
                                 <tr>
                                     <th class="number" style="width:291px;">출원번호</th>
-                                    <th class="select" style="width:900px;">이전가능성</th>
+                                    <th class="select" style="width:900px;">이전가능성 & 기술 영향력</th>
 
                                 </tr>
                             </thead>
@@ -62,7 +62,16 @@
                                 <tr class="특허선택셀">
                                     <td class="출원번호" data-value="{{patentdetail.patentnumber}}">
                                         {{patentdetail.patentnumber}}</td>
-                                    <td class="select">이전가능성값</td>
+                                    <td class="select">
+                                        <div style="width:890px; height:20px;">
+                                            <div class="이전가능성" data-value="{{patentdetail.transfer}}"
+                                                style="width:445px; height:20px; background-color:green; float:left;">
+                                            </div>
+                                            <div class="기술영향력" data-value="{{patentdetail.impact}}"
+                                                style="background-color:red;height:20px; width:400px; float:left;">
+                                            </div>
+                                        </div>
+                                    </td>
                                 </tr>
                                 {%endfor%}
                             </tbody>
@@ -77,7 +86,7 @@
 
                 </div>
                 <div class="특허정보">
-                    <div style="width:600px; height:300px; float:left; margin-left:10px;">
+                    <div style="width:700px; height:300px; float:left; margin-left:10px; margin-right:10px;">
                         <div class="정보">
                             <span style="font-weight:bold;">출원번호:</span>&nbsp;&nbsp;&nbsp;<span id="출원번호"></span>
                         </div>
@@ -97,7 +106,7 @@
                             <span style="font-weight:bold;">독립청구항수:</span>&nbsp;&nbsp;&nbsp;<span id="독립청구항수"></span>
                         </div>
                     </div>
-                    <div style="width:600px; height:300px; float:left;">
+                    <div style="width:300px; height:300px; float:left;">
                         <div class="정보">
                             <span style="font-weight:bold;">전체청구항수:</span>&nbsp;&nbsp;&nbsp;<span id="전체청구항수"></span>
                         </div>
@@ -136,17 +145,17 @@
                             <tbody>
                                 <tr>
                                     <th>매입 전</th>
-                                    <td id="patentvalid_b">5097</td>
-                                    <td id="cpp_b">10.473</td>
-                                    <td id="pii_b">0.654</td>
-                                    <td id="ts_b">3492.949</td>
+                                    <td id="patentvalid_b"></td>
+                                    <td id="cpp_b"></td>
+                                    <td id="pii_b"></td>
+                                    <td id="ts_b"></td>
                                 </tr>
                                 <tr>
                                     <th>매입 후</th>
-                                    <td id="patentvalid_a">5098</td>
-                                    <td id="cpp_a">11.424</td>
-                                    <td id="pii_a">0.712</td>
-                                    <td id="ts_a">3562.594</td>
+                                    <td id="patentvalid_a"></td>
+                                    <td id="cpp_a"></td>
+                                    <td id="pii_a"></td>
+                                    <td id="ts_a"></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -160,14 +169,15 @@
 
     $(".출원번호").click(function () {
         var patentselectnumber = $(this).data("value");
-        var companyselect = $('mycompany').data("value");
+        var companyselect = $('#mycompany').data("value");
+        var selectipc = $('#selectipc').data("value");
         $.ajax({
             dataType: 'json',
             url: "{%url 'patentselect'%}",
-            data: { 'patentselectnumber': patentselectnumber, 'is_ajax': true, 'companyselect': companyselect },
+            data: { 'patentselectnumber': patentselectnumber, 'selectipc': selectipc, 'is_ajax': true, 'companyselect': companyselect },
             success: function (data) {
                 $("#출원번호").text(data['patentselectnumber']);
-
+                $("#명칭").text(data['name']);
                 $("#출원일").text(data['date']);
                 $("#출원인대표명").text(data['representative']);
                 $("#출원인국가").text(data['country']);
@@ -185,7 +195,7 @@
                 $('#pii_a').text(data['pii_a']);
                 $('#ts_b').text(data['ts_b']);
                 $('#ts_a').text(data['ts_a']);
-
+                $('#')
             },
             error: function (request, status, error) {
                 alert('통신실패');

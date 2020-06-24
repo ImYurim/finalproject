@@ -125,7 +125,7 @@ a {
   .특허추천간략{
       display: grid;
       grid-template-columns: 1fr 9fr;
-      margin-bottom: 20px;
+      
       height:40px;
   }
 
@@ -153,7 +153,7 @@ a {
 }
 
 .특허추천결과{
-  margin-top: 20px;
+  
   margin-left: 160px;
   height: 300px;
 
@@ -181,7 +181,7 @@ a {
   width:300px;
 }
 .select{
-  width:900px;
+  width:894px;
 }
 
 table {
