@@ -28,5 +28,5 @@ urlpatterns = [
     path('patentresult/', finalapp.views.patentresult, name="patentresult"),
     path('patentexplain/', finalapp.views.patentexplain, name="patentexplain"),
     path('patentselect/', finalapp.views.patentselect, name="patentselect"),
-
+    path('dictionary/', finalapp.views.dictionary, name="dictionary"),
 ]

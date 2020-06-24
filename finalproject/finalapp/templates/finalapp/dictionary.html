@@ -1,0 +1,66 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>경쟁사분석</title>
+  <link rel="stylesheet" href="{%static 'finalapp/dictionary.css'%}">
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+</head>
+
+<body class="container">
+  <div class="upper">
+    <a class="home" href="{%url 'home'%}">특허전략솔루션</a>
+    <a class="menu1" href="">인사말</a>
+    <a class="menu2" href="">서비스 소개</a>
+    <a class="menu3" href="">용어 정의</a>
+  </div>
+  <div class="content">
+    <div class="제목">
+      <canvas id="square" width="10" height="50"></canvas>
+      <span id="title">용어정리</span>
+    </div>
+
+
+    <div class="결과">
+      <div class="경쟁사">
+        <div class="경쟁사분석간략">
+          <span class="소제목">경쟁사 분석</span>
+          <span class="설명"></span>
+
+        </div>
+        <div class="경쟁사분석결과" style="width:1200px; height:300px; border:1px solid black;">
+        
+        </div>
+      </div>
+
+      <div class="특허분야소개">
+        <div class="특허분야소개간략">
+          <span class="소제목">특허 경쟁력 비교</span>
+          <span class="설명"></span>
+        </div>
+
+        <div class="특허설명결과" style="width:1200px; height:300px; border:1px solid black; ">
+
+        </div>
+      </div>
+
+      <div class="특허경쟁력">
+        <div class="특허경쟁력간략">
+          <span class="소제목">특허 시각화</span>
+          <span class="설명"></span>
+        </div>
+
+        <div class="경쟁력분석결과" style="width:1200px; height:300px; border:1px solid black;">
+
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+
+</html>

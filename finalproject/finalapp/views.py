@@ -226,3 +226,7 @@ def patentselect(request):
 
     else:
         return redirect(home)
+
+
+def dictionary(request):
+    return render(request, 'finalapp/dictionary.html')
