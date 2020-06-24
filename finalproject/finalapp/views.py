@@ -185,3 +185,38 @@ def patentresult(request):
         return render(request, 'finalapp/patent.html', {'error': True, 'companyall': companyall})
 
     return render(request, 'finalapp/patentresult.html')
+
+
+def patentselect(request):
+    is_ajax = request.GET.get('is_ajax')
+    if is_ajax:
+        patentselectnumber = request.GET.get('patentselectnumber')
+        patent_detail = Patentdetail.objects.get(
+            patentnumber__contains=patentselectnumber)
+        date = patent_detail.date
+        representative = patent_detail.representative
+        country = patent_detail.country
+        independentclaimnumber = patent_detail.independentclaimnumber
+        totalclaimnumber = patent_detail.totalclaimnumber
+        quotation = patent_detail.quotation
+        citation = patent_detail.citation
+        valid = patent_detail.valid
+        familypatentnumber = patent_detail.familypatentnumber
+        impact = patent_detail.impact
+        transfer = patent_detail.transfer
+        promising = patent_detail.promising
+
+        company = request.GET.get('companyselect')
+        companydetail = Company.objects.get(name=company)
+        patentvalid_b = companydetail.patent_valid
+        patentvalid_a = patentvalid_b+1
+        cpp_b = round(companydetail.cpp, 3)
+        cpp_a =
+        pii_b = round(companydetail.pii, 3)
+        pii_a = cpp_a/16.1684
+        ts_b = round(companydetail.ts, 3)
+        ts_a = pii_a*(+1)
+        return JsonResponse({'date': date, 'patentselectnumber': patentselectnumber, 'representative': representative, 'country': country, 'independentclaimnumber': independentclaimnumber, 'totalclaimnumber': totalclaimnumber, 'quotation': quotation, 'citation': citation, 'valid': valid, 'familypatentnumber': familypatentnumber, 'impact': impact, 'transfer': transfer, 'promising': promising}, json_dumps_params={'ensure_ascii': False})
+
+    else:
+        return redirect(home)

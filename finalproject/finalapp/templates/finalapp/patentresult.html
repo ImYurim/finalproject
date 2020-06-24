@@ -24,7 +24,7 @@
         </div>
         {%if companydetail%}
         <div class="자회사">
-            <h1>입력한 회사 : {{company}}</h1>
+            <h1>입력한 회사 : <span id="mycompany" data-value="{{company}}">{{company}}</span></h1>
         </div>
         {%else%}
         <div class="자회사">
@@ -59,8 +59,9 @@
                             <tbody>
 
                                 {%for patentdetail in patent%}
-                                <tr>
-                                    <td class="number">{{patentdetail.patentnumber}}</td>
+                                <tr class="특허선택셀">
+                                    <td class="출원번호" data-value="{{patentdetail.patentnumber}}">
+                                        {{patentdetail.patentnumber}}</td>
                                     <td class="select">이전가능성값</td>
                                 </tr>
                                 {%endfor%}
@@ -75,50 +76,123 @@
                     <span class="설명">선택한 특허에 대한 설명</span>
 
                 </div>
-            </div>
-            <div class="특허">
-                <div class="특허분석간략">
-                    <span class="소제목">경쟁력 변화</span>
-                    <span class="설명">특허 매입 후 경쟁력 변화</span>
-
+                <div class="특허정보">
+                    <div style="width:600px; height:300px; float:left; margin-left:10px;">
+                        <div class="정보">
+                            <span style="font-weight:bold;">출원번호:</span>&nbsp;&nbsp;&nbsp;<span id="출원번호"></span>
+                        </div>
+                        <div class="정보">
+                            <span style="font-weight:bold;">명칭:</span>&nbsp;&nbsp;&nbsp;<span id="명칭"></span>
+                        </div>
+                        <div class="정보">
+                            <span style="font-weight:bold;">출원일:</span>&nbsp;&nbsp;&nbsp;<span id="출원일"></span>
+                        </div>
+                        <div class="정보">
+                            <span style="font-weight:bold;">출원인대표명:</span>&nbsp;&nbsp;&nbsp;<span id="출원인대표명"></span>
+                        </div>
+                        <div class="정보">
+                            <span style="font-weight:bold;">출원인국가:</span>&nbsp;&nbsp;&nbsp;<span id="출원인국가"></span>
+                        </div>
+                        <div class="정보">
+                            <span style="font-weight:bold;">독립청구항수:</span>&nbsp;&nbsp;&nbsp;<span id="독립청구항수"></span>
+                        </div>
+                    </div>
+                    <div style="width:600px; height:300px; float:left;">
+                        <div class="정보">
+                            <span style="font-weight:bold;">전체청구항수:</span>&nbsp;&nbsp;&nbsp;<span id="전체청구항수"></span>
+                        </div>
+                        <div class="정보">
+                            <span style="font-weight:bold;">자국인용횟수:</span>&nbsp;&nbsp;&nbsp;<span id="자국인용횟수"></span>
+                        </div>
+                        <div class="정보">
+                            <span style="font-weight:bold;">자국피인용횟수:</span>&nbsp;&nbsp;&nbsp;<span id="자국피인용횟수"></span>
+                        </div>
+                        <div class="정보">
+                            <span style="font-weight:bold;">권리만료예상일:</span>&nbsp;&nbsp;&nbsp;<span id="권리만료예상일"></span>
+                        </div>
+                        <div class="정보">
+                            <span style="font-weight:bold;">패밀리국가수:</span>&nbsp;&nbsp;&nbsp;<span id="패밀리국가수"></span>
+                        </div>
+                    </div>
                 </div>
-                <div class="특허분석결과">
-                    <table id="경쟁력테이블">
-                        <thead>
-                            <tr>
-                                <th></th>
-                                <th>유효특허수</th>
-                                <th>피인용수</th>
-                                <th>영향력 지수</th>
-                                <th>기술력 지수</th>
+                <div class="특허">
+                    <div class="특허분석간략">
+                        <span class="소제목">경쟁력 변화</span>
+                        <span class="설명">특허 매입 후 경쟁력 변화</span>
 
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th>매입 전</th>
-                                <td>5097</td>
-                                <td>10.473</td>
-                                <td>0.654</td>
-                                <td>3492.949</td>
-                            </tr>
-                            <tr>
-                                <th>매입 후</th>
-                                <td>5098</td>
-                                <td>11.424</td>
-                                <td>0.712</td>
-                                <td>3562.594</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    </div>
+                    <div class="특허분석결과">
+                        <table id="경쟁력테이블">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>유효특허수</th>
+                                    <th>피인용수</th>
+                                    <th>영향력 지수</th>
+                                    <th>기술력 지수</th>
 
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th>매입 전</th>
+                                    <td id="patentvalid_b">5097</td>
+                                    <td id="cpp_b">10.473</td>
+                                    <td id="pii_b">0.654</td>
+                                    <td id="ts_b">3492.949</td>
+                                </tr>
+                                <tr>
+                                    <th>매입 후</th>
+                                    <td id="patentvalid_a">5098</td>
+                                    <td id="cpp_a">11.424</td>
+                                    <td id="pii_a">0.712</td>
+                                    <td id="ts_a">3562.594</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 </body>
 <script>
 
+    $(".출원번호").click(function () {
+        var patentselectnumber = $(this).data("value");
+        var companyselect = $('mycompany').data("value");
+        $.ajax({
+            dataType: 'json',
+            url: "{%url 'patentselect'%}",
+            data: { 'patentselectnumber': patentselectnumber, 'is_ajax': true, 'companyselect': companyselect },
+            success: function (data) {
+                $("#출원번호").text(data['patentselectnumber']);
+
+                $("#출원일").text(data['date']);
+                $("#출원인대표명").text(data['representative']);
+                $("#출원인국가").text(data['country']);
+                $("#독립청구항수").text(data['independentclaimnumber']);
+                $("#전체청구항수").text(data['totalclaimnumber']);
+                $("#자국인용횟수").text(data['quotation']);
+                $("#자국피인용횟수").text(data['citation']);
+                $("#권리만료예상일").text(data['valid']);
+                $("#패밀리국가수").text(data['familypatentnumber']);
+                $('#patentvalid_b').text(data['patentvalid_b']);
+                $('#patentvalid_a').text(data['patentvalid_a']);
+                $('#cpp_b').text(data['cpp_b']);
+                $('#cpp_a').text(data['cpp_a']);
+                $('#pii_b').text(data['pii_b']);
+                $('#pii_a').text(data['pii_a']);
+                $('#ts_b').text(data['ts_b']);
+                $('#ts_a').text(data['ts_a']);
+
+            },
+            error: function (request, status, error) {
+                alert('통신실패');
+                alert(error);
+            }
+        })
+    })
 
 </script>
 

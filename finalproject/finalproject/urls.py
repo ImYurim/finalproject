@@ -27,5 +27,6 @@ urlpatterns = [
     path('patent/', finalapp.views.searchpatent, name="searchpatent"),
     path('patentresult/', finalapp.views.patentresult, name="patentresult"),
     path('patentexplain/', finalapp.views.patentexplain, name="patentexplain"),
+    path('patentselect/', finalapp.views.patentselect, name="patentselect"),
 
 ]
