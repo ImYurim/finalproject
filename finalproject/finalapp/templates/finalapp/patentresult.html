@@ -166,6 +166,18 @@
         </div>
 </body>
 <script>
+    $(document).ready(function () {
+        $('.select').each(function (index) {
+            var transferprob = $(this).find('.이전가능성').data("value");
+            var impactval = $(this).find('.기술영향력').data("value");
+            var transferprob_width = transferprob * 400;
+            $(this).find('.이전가능성').width(transferprob_width);
+            var impactval_width = impactval * 400;
+            $(this).find('.기술영향력').width(impactval_width);
+        })
+    })
+</script>
+<script>
 
     $(".출원번호").click(function () {
         var patentselectnumber = $(this).data("value");
