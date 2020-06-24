@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="{%static 'finalapp/competitor.css'%}">
+    <link rel="stylesheet" href="{%static 'finalapp/patent.css'%}">
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="{%static 'finalapp/select.js'%}"></script>
 
@@ -35,6 +35,12 @@
                 <form id="input-form" action="{%url 'patentresult'%}">
 
                     회사명 : <input type="text" id="company" name="company">
+                    <select id="분야선택" name="ipc">
+                        <option>분야선택</option>
+                        {%for ipc in ipc_detail%}
+                        <option value="{{ipc.patent}}">{{ipc.patent}}</option>
+                        {%endfor%}
+                    </select>
                     <input type="submit" value="검색" id="제출">
                 </form>
             </div>

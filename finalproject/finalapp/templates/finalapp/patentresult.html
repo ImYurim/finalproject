@@ -6,7 +6,8 @@
     <meta charset="utf-8">
     <title>경쟁사분석</title>
     <link rel="stylesheet" href="{%static 'finalapp/patentresult.css'%}">
-
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
 </head>
 
 <body class="container">
@@ -39,22 +40,40 @@
 
                 </div>
                 <div class="특허추천결과">
-                    <div id="분야선택">
-                        <select>
-                            <option>분야선택</option>
+                    <div id="분야선택" style="width:100%">
+                        선택한 분야 : {{ipc}}
+                    </div>
+                    <div id="목록명">
+                        <table class="user-table" style="width:1205px; border:0">
+                            <thead>
+                                <tr>
+                                    <th class="number" style="width:291px;">출원번호</th>
+                                    <th class="select" style="width:900px;">이전가능성</th>
 
-                        </select>
+                                </tr>
+                            </thead>
+                        </table>
                     </div>
                     <div id="검색목록" style="overflow: auto;">
-                        <table id="user-table">
+                        <table id="user-table patenttable">
                             <tbody>
+
+                                {%for patentdetail in patent%}
                                 <tr>
-                                    <td class="number">특허명</td>
-                                    <td class="select">출원번호</td>
+                                    <td class="number">{{patentdetail.patentnumber}}</td>
+                                    <td class="select">이전가능성값</td>
                                 </tr>
+                                {%endfor%}
                             </tbody>
                         </table>
                     </div>
+                </div>
+            </div>
+            <div class="특허설명">
+                <div class="특허분석간략">
+                    <span class="소제목">특허 설명</span>
+                    <span class="설명">선택한 특허에 대한 설명</span>
+
                 </div>
             </div>
             <div class="특허">
@@ -98,5 +117,9 @@
         </div>
     </div>
 </body>
+<script>
+
+
+</script>
 
 </html>

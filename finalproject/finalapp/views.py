@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views.generic.edit import FormView
-from .models import Company, Patent, IPC
+from .models import Company, Patent, IPC, Patentdetail
 import json
 from django.http import HttpResponse, JsonResponse
 
@@ -163,7 +163,8 @@ def patentexplain(request):
 
 def searchpatent(request):
     companyall = Company.objects.all()
-    return render(request, 'finalapp/patent.html', {'companyall': companyall})
+    ipc_detail = IPC.objects.all()
+    return render(request, 'finalapp/patent.html', {'companyall': companyall, 'ipc_detail': ipc_detail})
 
 
 def patentresult(request):
@@ -173,7 +174,9 @@ def patentresult(request):
             name=company)
         if companydetail:
             mycompany = Company.objects.get(name=company)
-            return render(request, 'finalapp/patentresult.html', {'companydetail': companydetail, 'company': company})
+            ipc = request.GET.get('ipc')
+            patent = Patentdetail.objects.all().filter(patent=ipc)
+            return render(request, 'finalapp/patentresult.html', {'companydetail': companydetail, 'company': company, 'patent': patent, 'ipc': ipc})
         else:
             companyall = Company.objects.all()
             return render(request, 'finalapp/patent.html', {'error': True, 'companyall': companyall})
